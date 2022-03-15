@@ -4,7 +4,7 @@
 - Python 3
 - Zabbix agent (added to PATH)
 
-## Info
+## About
 
 Script that will log all the usefull information from HOIP devices to a zabbix server. Main script file is *Zabbix.py* and depends on *hoip.py* and *command.py*. All these file need to be in the **same directory** for them to work!
 
