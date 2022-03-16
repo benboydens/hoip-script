@@ -3,79 +3,79 @@
     {
       "name": "Telenet TX",
       "ip_address": "192.168.11.10",
-      "default_group": 10,
+      "default_channel": 10,
       "type": "TX"
     },
     {
       "name": "Mac mini aula TX",
       "ip_address": "192.168.11.11",
-      "default_group": 11,
+      "default_channel": 11,
       "type": "TX"
     },
     {
       "name": "Apple TV TX",
       "ip_address": "192.168.11.12",
-      "default_group": 12,
+      "default_channel": 12,
       "type": "TX"
     },
     {
       "name": "Signage TX",
       "ip_address": "192.168.11.13",
-      "default_group": 13,
+      "default_channel": 13,
       "type": "TX"
     },
     {
       "name": "Airtame TX",
       "ip_address": "192.168.11.14",
-      "default_group": 14,
+      "default_channel": 14,
       "type": "TX"
     },
     {
       "name": "Project RX",
       "ip_address": "192.168.11.20",
-      "default_group": 13,
+      "default_channel": 13,
       "type": "RX"
     },
     {
       "name": "Lobby RX",
       "ip_address": "192.168.11.21",
-      "default_group": 13,
+      "default_channel": 13,
       "type": "RX"
     },
     {
       "name": "Lounge RX",
       "ip_address": "192.168.11.22",
-      "default_group": 10,
+      "default_channel": 10,
       "type": "RX"
     },
     {
       "name": "Opleiding 1 RX",
       "ip_address": "192.168.11.23",
-      "default_group": 14,
+      "default_channel": 14,
       "type": "RX"
     },
     {
       "name": "Opleiding 2 RX",
       "ip_address": "192.168.11.24",
-      "default_group": 14,
+      "default_channel": 14,
       "type": "RX"
     },
     {
       "name": "Directie RX",
       "ip_address": "192.168.11.25",
-      "default_group": 10,
+      "default_channel": 10,
       "type": "RX"
     },
     {
       "name": "Bar RX",
       "ip_address": "192.168.11.26",
-      "default_group": 10,
+      "default_channel": 10,
       "type": "RX"
     },
     {
       "name": "Meetingroom RX",
       "ip_address": "192.168.11.27",
-      "default_group": 14,
+      "default_channel": 14,
       "type": "RX"
     }
   ]

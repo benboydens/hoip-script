@@ -14,7 +14,7 @@ for entry in device_mapping['devices']:
 
     # send command to change channel to default
     try:
-        payload = entry['default_group'].to_bytes(2, 'big')
+        payload = entry['default_channel'].to_bytes(2, 'big')
         response = device.send_command(hoip.SET_GROUP_ID, payload)
     except TimeoutError:
         print(f'Cannot reach device {entry["name"]}')
