@@ -1,12 +1,11 @@
 # Script om alle tv's terug te zetten op de default channel
-import lib.hoip as hoip
-import lib.command as command
+import hoip
 import json
 
 
 # Read in JSON file
 device_mapping = None
-with open('mapping_devices.json', 'r') as file:
+with open('./mapping/mapping_devices.json', 'r') as file:
     device_mapping = json.load(file)
 
 for entry in device_mapping['devices']:
@@ -16,7 +15,7 @@ for entry in device_mapping['devices']:
     # send command to change channel to default
     try:
         payload = entry['default_group'].to_bytes(2, 'big')
-        response = device.send_command(command.SET_GROUP_ID, payload)
+        response = device.send_command(hoip.SET_GROUP_ID, payload)
     except TimeoutError:
         print(f'Cannot reach device {entry["name"]}')
     

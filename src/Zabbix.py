@@ -1,10 +1,9 @@
-import lib.hoip as hoip
-import lib.command as command
+import hoip
 import json
 
 # Read in JSON file
 device_mapping = None
-with open('mapping_devices.json', 'r') as outfile:
+with open('./mapping/mapping_devices.json', 'r') as outfile:
     device_mapping = json.load(outfile)
 
 # Create file for zabbix to send
@@ -23,14 +22,14 @@ for entry in device_mapping['devices']:
     # send command
     try:
         # Get Group ID
-        group_res = device.send_command(command.GET_GROUP_ID)
+        group_res = device.send_command(hoip.GET_GROUP_ID)
 
         # Get Firmware Version
         version_res = None
         if entry['type'] == 'TX':
-            version_res = device.send_command(command.GET_TX_FIRMWARE_VERSION)
+            version_res = device.send_command(hoip.GET_TX_FIRMWARE_VERSION)
         else:
-            version_res = device.send_command(command.GET_RX_FIRMWARE_VERSION)
+            version_res = device.send_command(hoip.GET_RX_FIRMWARE_VERSION)
 
     except TimeoutError:
         outfile.write(f'"{entry["name"]}" hoip.active 0\n') # 0 => 'Not Available', 1 => 'Available'

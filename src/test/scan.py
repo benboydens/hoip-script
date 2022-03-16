@@ -1,4 +1,4 @@
-import socket, os
+import socket
 
 ##########################################################
 ##      Create Broadcast packets to find devices        ##
