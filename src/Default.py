@@ -1,11 +1,13 @@
 # Script om alle tv's terug te zetten op de default channel
-import hoip
-import json
+import hoip, json, os
 
+
+# get parent folder absolute location
+src_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Read in JSON file
 device_mapping = None
-with open('./mapping/mapping_devices.json', 'r') as file:
+with open(f'{src_dir}/mapping/mapping_devices.json', 'r') as file:
     device_mapping = json.load(file)
 
 for entry in device_mapping['devices']:

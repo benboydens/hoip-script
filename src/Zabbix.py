@@ -1,13 +1,15 @@
-import hoip
-import json
+import hoip, json, os
+
+# get parent folder absolute location
+src_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Read in JSON file
 device_mapping = None
-with open('./mapping/mapping_devices.json', 'r') as outfile:
+with open(f'{src_dir}/mapping/mapping_devices.json', 'r') as outfile:
     device_mapping = json.load(outfile)
 
 # Create file for zabbix to send
-outfile = open("./out/zabbix_out.txt", "w")
+outfile = open(f'{src_dir}/out/zabbix_out.txt', 'w')
 
 
 #####################################
@@ -37,7 +39,7 @@ for entry in device_mapping['devices']:
 
 
     # parse group response
-    result =  "Read succeeded" if not group_res[0] else "!!READ FAILED!!"
+    result =  'Read succeeded' if not group_res[0] else '!!READ FAILED!!'
     group_id = (group_res[1] << 8) + group_res[2]
 
     # parse firmware version response
@@ -56,8 +58,6 @@ outfile.close()
 ##      Send To Zabbix Server       ##
 ######################################
 
-import os
-
 # send values in out file to zabbix server
-print("Sending configurations to Zabbix Server...")
-os.system("zabbix_sender -z zabbix.dataline.eu -i ./out/zabbix_out.txt")
+print('Sending configurations to Zabbix Server...\n' + 50 * '-')
+os.system(f'zabbix_sender -z zabbix.dataline.eu -i {src_dir}/out/zabbix_out.txt')
