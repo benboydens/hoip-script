@@ -9,7 +9,7 @@ with open(f'{src_dir}/mapping/mapping_devices.json', 'r') as outfile:
     device_mapping = json.load(outfile)
 
 # Create file for zabbix to send
-outfile = open(f'{src_dir}/out/zabbix_out.txt', 'w')
+outfile = open(f'{src_dir}/out/zabbix.out', 'w')
 
 
 #####################################
@@ -60,4 +60,4 @@ outfile.close()
 
 # send values in out file to zabbix server
 print('Sending configurations to Zabbix Server...\n' + 50 * '-')
-os.system(f'zabbix_sender -z zabbix.dataline.eu -i {src_dir}/out/zabbix_out.txt')
+os.system(f'zabbix_sender -z zabbix.dataline.eu -i {src_dir}/out/zabbix.out')
